@@ -42,13 +42,12 @@ public class ProducerApp {
                 String key = String.format("Record-%d", i);
                 String message = String.format("Message: %d sent at %s", i, LocalDateTime.now());
                 ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, message);
-                kafkaProducer.send(record);
-                LOGGER.debug("{}", record);
 
-                Thread.sleep(500); // randomize the time between record sends
+                kafkaProducer.send(record);
+                LOGGER.debug("key={}, message={}", key, message);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("An error occurred while sending the messages", e);
         }
     }
 }
