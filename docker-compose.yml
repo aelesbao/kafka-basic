@@ -10,6 +10,8 @@ services:
 
   kafka:
     image: aelesbao/kafka
+    entrypoint: ["/discovery.sh"]
+    command: ["start-kafka"]
     ports:
       - 9092
       - 7203
@@ -21,3 +23,4 @@ services:
       - zookeeper
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./discovery.sh:/discovery.sh
