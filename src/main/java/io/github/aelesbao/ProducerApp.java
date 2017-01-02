@@ -30,7 +30,6 @@ public class ProducerApp {
         props.put("max.request.size", 1048576);
         props.put("partitioner.class", "org.apache.kafka.clients.producer.internals.DefaultPartitioner");
         props.put("request.timeout.ms", 30000);
-        props.put("timeout.ms", 30000);
         props.put("max.in.flight.requests.per.connection", 5);
         props.put("retry.backoff.ms", 5);
 
