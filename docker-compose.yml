@@ -9,7 +9,7 @@ services:
       - 2181
 
   kafka:
-    image: aelesbao/kafka
+    image: aelesbao/kafka:2.11-0.10.1.1
     entrypoint: ["/discovery.sh"]
     command: ["start-kafka"]
     ports:
